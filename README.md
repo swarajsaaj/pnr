@@ -1,6 +1,6 @@
 ##A Laravel Package for PNR Enquiry through Indian Railways
 
-<<<<<<< HEAD:READEME.md
+
 >Note:- This is not intended for any DOS attack, just to ease the Automation of PNR enquiry through Laravel
 
 PNR Enquiry for Laravel
@@ -13,34 +13,41 @@ Run <code>composer update</code> to pull down the latest version.
 
 Now open up app/config/app.php and add the service provider to your providers array.
 
-<code>
+```php
 'providers' => array(
     'Swarajsaaj\Pnr\PnrServiceProvider',
 )
-</code>
+```
 
 Now add the alias.
 
-<code>
+```php
 'aliases' => array(
     'Pnr' => 'Swarajsaaj\Pnr\Facades\Pnr',
 )
-</code>
+```
 
-##Use
+##Usage
 
-Use following
+Use Alias 'Pnr' as follows:-
 
-<code>
-	Pnr::request(1234567890);  //PNR number here
-</code>
+```php
+
+   $pnr=Pnr::request(1234567890);  //PNR number here
+   echo $pnr;
+
+```
 
 it returns the PNR information in a JSON format as follows
 
-<code>
-	{
+
+```javasript
+   {
+
    "status":"OK",
+
    "data":{
+
       "pnr":1234567890,
       "train_name":"HIMACHAL EXPRES",
       "train_number":"*14554",
@@ -57,11 +64,9 @@ it returns the PNR information in a JSON format as follows
          }
       ]
    }
-}
-</code>
+ }
+```
+
 
 Hope it helps out. 
 Will be working on adding other Information in the API .
-=======
-Note:- This is not intended for any DOS attack, just to ease the Automation of PNR enquiry through Laravel
->>>>>>> 5be2fd478244ebd63be0732454a138df40cae254:README.md
