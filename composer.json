@@ -1,0 +1,20 @@
+{
+    "name": "swarajsaaj/pnr",
+    "description": "A PNR enquiry in JSON format package for Indian Railways for Laravel",
+    "authors": [
+        {
+            "name": "Swaraj Pal",
+            "email": "swarajpalsaaj@yahoo.co.in"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Swarajsaaj\\Pnr": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
