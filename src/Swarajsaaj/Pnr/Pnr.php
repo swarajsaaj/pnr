@@ -5,7 +5,7 @@ class Pnr {
 
 
      function array2json($arr) {
-    if(function_exists('json_encode')) return json_encode($arr); //Lastest versions of PHP already has this functionality.
+    if(function_exists('json_encode')) return json_encode($arr); 
     $parts = array();
     $is_list = false;
 
@@ -74,25 +74,19 @@ class Pnr {
 			}
 			//perform our request
 			$result = curl_exec($curl_connection);
-			// Debug -Data
-			//show information regarding the request
-			//var_dump(curl_getinfo($curl_connection));
-			// echo curl_errno($curl_connection) . '-' .
-			//                curl_error($curl_connection);
-
+			
 			//close the connection
 			curl_close($curl_connection);
 			return $result;
 			}
 
 
-						// Function to construct the post request
+						
 			function createPostString($postArray){
-			//traverse array and prepare data for posting (key1=value1)
+			
 			foreach ( $postArray as $key => $value) {
 			    $post_items[] = $key . '=' . $value;
 			}
-			//create the final string to be posted using implode()
 			return implode ('&', $post_items);
 			}
 
@@ -100,11 +94,7 @@ class Pnr {
 		  function request($pnr)
 		   {
 
-				// KEY      Datatype           Mandatory      Description
-				//-------------------------------------------------------
-				// pnrno    Integer(10)        true           PNR number to be fetched 10 digit
-				// rtype    String(XML/JSON)   false          Return type format 
-				// callback String 			   false          Support for JSONP only supported for GET
+			
 				$pnt_no = $pnr;
 				
 				$url_captch = 'http://www.indianrail.gov.in/pnr_Enq.html';
@@ -119,9 +109,7 @@ class Pnr {
 
 				$result = $this->makeWebCall($url_pnr,$post_string,$url_captch );
 
-				//Debug
-				//var_dump($result);
-				// Parse Logic
+				
 				// I have not used DOM lib it is simple regEx parse.
 				//Change here when the Page layout of the page changes.
 				$matches = array();

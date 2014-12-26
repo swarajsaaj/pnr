@@ -1,4 +1,4 @@
-##A Laravel Package for PNR Enquiry through Indian Railways
+##A Laravel Package for PNR Enquiry PHP API through Indian Railways
 
 
 >Note:- This is not intended for any DOS attack, just to ease the Automation of PNR enquiry through Laravel
@@ -6,10 +6,15 @@
 PNR Enquiry for Laravel
 
 Add swarajsaaj/pnr to composer.json.
+```php
 
-"swarajsaaj/pnr": "dev-master"
+"require-dev": {
+    "swarajsaaj/pnr": "dev-master"
+}
 
-Run <code>composer update</code> to pull down the latest version.
+```
+
+Run <code>composer update --dev</code> to pull down the latest version.
 
 Now open up app/config/app.php and add the service provider to your providers array.
 
